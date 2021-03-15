@@ -1,0 +1,107 @@
+---
+---
+
+// orig loc "/_sass/jekyll-theme-cayman.scss"
+
+// @import 'jekyll-theme-cayman';
+@import "{{ site.theme }}";
+
+body {
+  padding: 0;
+  margin: 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: "HyliaSerif", "KoreanBold";
+    font-weight: normal;
+  }
+  font-family: "Open Sans", "KoreanRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $body-text-color;
+}
+
+.page-header {
+  color: #f9f7dc;
+  text-align: center;
+  background-image: url("/assets/img/titlebg.png");
+}
+
+.project-name { // "title" area
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+
+  @include large {
+    font-size: 4rem;
+  }
+
+  @include medium {
+    font-size: 2.75rem;
+  }
+
+  @include small {
+    font-size: 2rem;
+  }
+}
+
+.project-tagline { // "description" area
+  margin-bottom: 2rem;
+  font-weight: normal;
+  opacity: 0.7;
+
+  @include large {
+    font-size: 1.5rem;
+  }
+
+  @include medium {
+    font-size: 1.25rem;
+  }
+
+  @include small {
+    font-size: 1.15rem;
+  }
+}
+
+.main-content {
+  @include large {
+    font-size: 1.1rem;
+  }
+  
+  @include medium {
+    font-size: 1.1rem;
+  }
+  
+  @include small {
+    font-size: 1rem;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: #8d317e;
+  }
+}
+  
+@font-face {
+  font-family: "HyliaSerif";
+  src: url("/assets/fonts/HyliaSerifBeta-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "KoreanBold";
+  src: url("/assets/fonts/NanumSquareEB.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "KoreanRegular";
+  src: url("/assets/fonts/NanumSquareR.ttf") format("truetype");
+}
