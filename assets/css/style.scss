@@ -27,7 +27,7 @@ body {
 .page-header {
   color: #f9f7dc;
   text-align: center;
-  background-image: url("/assets/img/titlebg.png");
+  background-image: url("../assets/img/titlebg.png");
 }
 
 .project-name { // "title" area
@@ -93,15 +93,15 @@ body {
   
 @font-face {
   font-family: "HyliaSerif";
-  src: url("/assets/fonts/HyliaSerifBeta-Regular.otf") format("opentype");
+  src: url("../assets/fonts/HyliaSerifBeta-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "KoreanBold";
-  src: url("/assets/fonts/NanumSquareEB.ttf") format("truetype");
+  src: url("../assets/fonts/NanumSquareEB.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "KoreanRegular";
-  src: url("/assets/fonts/NanumSquareR.ttf") format("truetype");
+  src: url("../assets/fonts/NanumSquareR.ttf") format("truetype");
 }
