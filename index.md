@@ -3,6 +3,7 @@ layout: default
 title: Astor's Redemption
 description: >
   Logs of a long-termed, story-changing BoTW modding project.<br>1인 1프로젝트 : 젤다 모딩 개발일지
+permalink: /main/
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.

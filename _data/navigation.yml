@@ -1,0 +1,28 @@
+- title: 강낭콩 키우기
+  url: /
+  sublinks:
+    - title: Main; 맨땅에헤딩~
+      url: /main/
+    - title: Another page
+      url: /another/
+
+- title: Group of Things
+  url: /group/
+  sublinks:
+    - title: 한글 시도
+      url: /group/si2
+    - title: Sub-item 3
+      url: /group/si3
+
+- title: Group of Things
+  url: /group/
+
+- title: Group of Things
+  url: /group/
+  sublinks:
+    - title: Sub-item 1
+      url: /group/si1
+    - title: Sub-item 2
+      url: /group/si2
+    - title: Sub-item 3
+      url: /group/si3

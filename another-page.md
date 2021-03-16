@@ -1,8 +1,10 @@
 ---
 layout: default
-title: Another page
-description: This is just another page
+description: 2099. 10. 10.
+permalink: /another/
 ---
+
+# Log No. Sth
 
 ## Welcome to another page
 

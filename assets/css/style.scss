@@ -25,9 +25,8 @@ body {
 }
 
 .page-header {
-  color: #f9f7dc;
-  text-align: center;
-  background-image: url("../img/titlebg.png");
+  background: url("../img/titlebg.png") no-repeat fixed;
+  background-size: cover;
 }
 
 .project-name { // "title" area
@@ -48,8 +47,6 @@ body {
 }
 
 .project-tagline { // "description" area
-  margin-bottom: 2rem;
-  font-weight: normal;
   opacity: 0.7;
 
   @include large {
@@ -66,7 +63,11 @@ body {
 }
 
 .main-content {
+  padding: 0;
+  margin: 0 auto;
+  
   @include large {
+    max-width: 100%;
     font-size: 1.1rem;
   }
   
@@ -77,31 +78,52 @@ body {
   @include small {
     font-size: 1rem;
   }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: normal;
-    color: #8d317e;
+
+  .mainbar {
+    padding: 2.4rem 3.2rem;
+    display: block;
+    width: calc(100% - 250px);
+    // max-width: calc(100% - 400px);
   }
-}
   
-@font-face {
-  font-family: "HyliaSerif";
-  src: url("../fonts/HyliaSerifBeta-Regular.otf") format("opentype");
-}
+  .sidebar {
+    padding: 0;
+    font-family: "HyliaSerif", "KoreanBold";
+    font-size: 1.05em;
 
-@font-face {
-  font-family: "KoreanBold";
-  src: url("../fonts/NanumSquareEB.ttf") format("truetype");
-}
+    .active {
+      background-color: #ddbdef;
+    }
 
-@font-face {
-  font-family: "KoreanRegular";
-  src: url("../fonts/NanumSquareR.ttf") format("truetype");
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+    }
+
+    .parent {
+      display: block;
+      font-size: 1.14em;
+      padding: $sidebar-padding-each*.7 0 $sidebar-padding-each 0;
+    }
+
+    li {
+      text-indent: $sidebar-indent;
+      padding: $sidebar-padding*.66 0 $sidebar-padding 0; // top right bottom left
+      
+      li {
+        padding: $sidebar-padding-each $sidebar-indent*.8;
+      }
+    }
+
+    background-color: antiquewhite;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
+    height: 100vh;
+    display: block;
+    top: 0;
+    left: 0;
+    position: sticky;
+  }
 }

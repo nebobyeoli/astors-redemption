@@ -5,7 +5,8 @@ Gemfile.lock
 
 cayman
 
-_sass
+_sass/*
+!_sass/variables.scss
 .jekyll-cache
 docs
 script
@@ -13,7 +14,10 @@ script
 .travis.yml
 jekyll-theme-cayman.gemspec
 LICENSE
+hyrulesunset2.jpg
 thumbnail.png
-*.pdf
 *.psd
+*.pdf
 *.png~
+*.jpg~
+*.jpeg~
