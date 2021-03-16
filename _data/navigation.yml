@@ -1,8 +1,7 @@
 - title: 강낭콩 키우기
-  url: /
   sublinks:
     - title: Main; 맨땅에헤딩~
-      url: /main/
+      url: /
     - title: Another page
       url: /another/
 
