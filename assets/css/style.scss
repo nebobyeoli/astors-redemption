@@ -5,6 +5,7 @@
 
 // @import 'jekyll-theme-cayman';
 @import "{{ site.theme }}";
+@import "variables";
 
 body {
   padding: 0;
