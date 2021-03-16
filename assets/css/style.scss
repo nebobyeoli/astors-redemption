@@ -69,6 +69,15 @@ body {
   padding: 0;
   margin: 0 auto;
   
+  background-color: antiquewhite;
+  min-width: $sidebar-width;
+  max-width: $sidebar-width;
+  height: 100vh;
+  display: block;
+  top: 0;
+  left: 0;
+  position: sticky;
+  
   @include large {
     max-width: 100%;
     font-size: 1.1rem;
@@ -80,6 +89,16 @@ body {
   
   @include small {
     font-size: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+    color: $section-headings-color;
   }
 
   .mainbar {
@@ -119,24 +138,5 @@ body {
         padding: $sidebar-padding-each $sidebar-indent*.8;
       }
     }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: normal;
-      color: $section-headings-color;
-    }
-
-    background-color: antiquewhite;
-    min-width: $sidebar-width;
-    max-width: $sidebar-width;
-    height: 100vh;
-    display: block;
-    top: 0;
-    left: 0;
-    position: sticky;
   }
 }
