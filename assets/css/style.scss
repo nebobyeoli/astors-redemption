@@ -26,6 +26,8 @@ body {
 }
 
 .page-header {
+  color: $header-heading-color;
+  background-color: $header-bg-color;
   background: url("../img/titlebg.png") no-repeat fixed;
   background-size: cover;
 }
@@ -116,6 +118,16 @@ body {
       li {
         padding: $sidebar-padding-each $sidebar-indent*.8;
       }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+      color: $section-headings-color;
     }
 
     background-color: antiquewhite;
