@@ -25,6 +25,16 @@ body {
   color: $body-text-color;
 }
 
+a {
+  color: $body-link-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $body-link-hover-color;
+  }
+}
+
 .page-header {
   color: $header-heading-color;
   background-color: $header-bg-color;
