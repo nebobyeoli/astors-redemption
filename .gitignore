@@ -13,7 +13,11 @@ script
 .rubocop.yml
 .travis.yml
 jekyll-theme-cayman.gemspec
+
 LICENSE
+NanumSquareRoundR.ttf
+D2Coding-Ver1.3.2-20180524.ttf
+
 hyrulesunset2.jpg
 thumbnail.png
 MainQuest_redone.png

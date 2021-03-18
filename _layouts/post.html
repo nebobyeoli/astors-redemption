@@ -25,18 +25,35 @@
   </head>
   <body>
     <header class="page-header" role="banner" style="width: auto !important;">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+      {% if page.url == '/' %}
+        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+      {% endif %}
     </header>
     
       <main id="content" class="main-content" role="main">
         <div class="sidebar">
           {% include navigation.html %}
         </div>
-
+        
         <div class="mainbar">
-          {{ content }}
+          <h1 class="page-title">{{ page.title | default: site.title }}</h1>
+          <h3 class="page-desc">{{ page.description | default: site.description }}</h3>
+          <h3 class="page-desc"></h3>
+          <hr>
+          
+          {% if page.content != empty %}
+            {{ content }}<br><br><br><hr>
+          {% endif %}
+
+          <h1>
+            <a href="{{ '/' }}" class="a-footing">
+              <span class="big-url">{{ site.title }}</span>
+              <span class="small-url"> - 홈 화면으로</span>
+            </a>
+          </h1>
+          <h4 class="page-desc foot-desc">{{ site.description }}</h4>
         
           <footer class="site-footer">
             <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>

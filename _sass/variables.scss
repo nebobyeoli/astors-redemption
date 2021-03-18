@@ -8,16 +8,26 @@ $header-bg-color: #645f8a;
 $header-bg-color-secondary: #39477b;
 
 // Sidebar
-$sidebar-indent: 2rem;
-$sidebar-width: 240px;
-$sidebar-padding: 1rem;
-$sidebar-padding-each: .6rem;
+$sidebar-bg-color: #f5e7ec;
+$sidebar-font-size: 1.4em;
+$sidebar-indent: 1rem;
+$sidebar-pre-left: 12px;
+$sidebar-width: 290px;
+$sidebar-padding: 1.8rem;
+$sidebar-padding-each: .5rem;
 
 // Text
-$section-headings-color: #8d317e;
+$section-h1-color: #7e1355;
+$section-h2-color: #aa3c6f;
+
+$sidebar-active-color: #d3c1da;
+$sidebar-hover-color: #dedae7;
+$body-link-pink: #9b0c2b;
+$body-link-blue: #1e6bb8;
+
+$section-headings-color: #159957 !default;
 $body-text-color: #606c71 !default;
 $body-link-color: #1e6bb8 !default;
-$body-link-hover-color: #aa3c6f;
 $blockquote-text-color: #819198 !default;
 
 // Code
@@ -37,10 +47,15 @@ $hr-border-color: #eff0f1 !default;
 
 @font-face {
   font-family: "KoreanBold";
-  src: url("../fonts/NanumSquareEB.ttf") format("truetype");
+  src: url("../fonts/NanumSquareEB.otf") format("opentype");
 }
 
 @font-face {
   font-family: "KoreanRegular";
-  src: url("../fonts/NanumSquareR.ttf") format("truetype");
+  src: url("../fonts/NanumSquareR.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "KoreanLight";
+  src: url("../fonts/NanumSquareL.otf") format("opentype");
 }

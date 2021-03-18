@@ -19,50 +19,89 @@
 
   {% for entry in site.data.navigation %}
 
-    <!-- {% if page.url == entry.url %}
-      {% assign current = 'class="active"' %}
-    {% else %}
-      {% assign current = 'class=""' %}
-    {% endif %} -->
-    
     {% assign sublinks = entry.sublinks %}
     
     {% if sublinks %}
 
       <li {{ current }}>
-        <span class="parent">
-          {{ entry.title }}
-        </span>
+
+        {% if entry.url %}
+          <span class="parent hasUrl">
+            <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
+          </span>
+        {% else %}
+          <span class="parent">
+            {{ entry.title }}
+          </span>
+        {% endif %}
 
         <ul>
           {% for sublink in sublinks %}
 
-          {% if page.url == sublink.url %}
-            <li class="active"><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
-          {% else %}
-            <li><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
-          {% endif %}
+            {% assign trunc = page.url | split: '.html' | first %}
+            {% if trunc == sublink.url %}
+              <li class="active"><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
+            {% else %}
+              <li class="hasUrl"><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
+            {% endif %}
 
-          {% endfor %}
+          {% endfor %} <!-- for sublink in sublinks -->
         </ul>
       </li>
 
     {% else %}
 
-      {% if page.url == entry.url %}
-        {% assign current = 'class="active"' %}
-      {% else %}
-        {% assign current = '' %}
-      {% endif %}
+    <li {{ current }}>
+      {% if entry.url %}
+
+        {% assign trunc = page.url | split: '.html' | first %}
+        {% if trunc == entry.url %}
+          {% assign current = 'class="active"' %}
+        {% else %}
+          {% assign current = 'class="hasUrl"' %}
+        {% endif %}
       
-      <li {{ current }}>
         <span class="parent">
           <a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
         </span>
-      </li>
+
+      {% else %}
       
-    {% endif %}
+        <span class="parent">
+          {{ entry.title }}
+        </span>
+
+      {% endif %} <!-- if entry.url -->
+    </li>
     
-  {% endfor %}
+    {% endif %} <!-- if sublinks -->
+
+  {% endfor %} <!-- for entry in site.data.navigation -->
+  
+  <li>
+    <span class="parent">
+      Posts
+    </span>
+    
+    <ul>
+      {% for post in site.posts %}
+      
+        {% if page.url == post.url %}
+          {% assign class = 'active' %}
+        {% else %}
+          {% assign class = 'hasUrl' %}
+        {% endif %}
+
+        <li class="{{ class }}">
+          <a href="{{ post.url }}" style="font-size: .76em;">
+            <sub>{{ post.date | date: "%m.%d." }}&nbsp;</sub>
+            {{ post.title }}
+          </a>
+        </li>
+        
+      {% endfor %} <!-- for post in site.posts -->
+    </ul>
+  </li>
+
   </ul>
 </nav>

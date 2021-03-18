@@ -10,6 +10,11 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: "Open Sans", "KoreanRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: $body-text-color;
+  
   h1,
   h2,
   h3,
@@ -21,17 +26,15 @@ body {
     font-family: "HyliaSerif", "KoreanBold";
     font-weight: normal;
   }
-  font-family: "Open Sans", "KoreanRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: $body-text-color;
 }
 
 a {
-  color: $body-link-color;
+  color: inherit;
   text-decoration: none;
 
   &:hover {
-    text-decoration: none;
-    color: $body-link-hover-color;
+    color: $body-link-blue;
+    text-decoration: underline;
   }
 }
 
@@ -79,6 +82,9 @@ a {
   padding: 0;
   margin: 0 auto;
   
+  display: flex;
+  position: relative;
+
   @include large {
     max-width: 100%;
     font-size: 1.1rem;
@@ -99,36 +105,125 @@ a {
   h5,
   h6 {
     font-weight: normal;
-    color: $section-headings-color;
+    color: $section-h2-color;
+    
+    a { // body headers
+      &:hover {
+        color: $body-link-pink;
+      }
+    }
+  }
+
+  h1 {
+    font-weight: normal;
+    color: $section-h1-color;
+  }
+
+  p {
+    line-height: 2;
+  }
+
+  strong {
+    font-family: "HyliaSerif", "KoreanBold";
+    font-weight: normal; 
+  }
+
+  code {
+    font-family: Consolas, "KoreanRegular", "Liberation Mono", Menlo, Courier, monospace;
+  }
+
+  pre {
+    font: 1rem Consolas, "KoreanRegular", "Liberation Mono", Menlo, Courier, monospace;
   }
 
   .mainbar {
     padding: 2.4rem 3.2rem;
     display: block;
-    width: calc(100% - 250px);
-    // max-width: calc(100% - 400px);
+    width: calc(100% - 300px); // minus sidebar
+    
+    .page-title {
+      font-size: 3em;
+      color: $header-bg-color-secondary;
+    }
+
+    .page-desc {
+      color: $header-bg-color;
+    }
+
+    .a-footing {
+      text-decoration: none;
+
+      .big-url {
+        font-size: .8em;
+        color: $header-bg-color-secondary;
+        
+        &:hover {
+          color: $body-link-blue;
+          text-decoration: underline;
+        }
+      }
+
+      .small-url {
+        font-size: .4em;
+        color: $header-bg-color;
+      }
+    }
+
+    .foot-desc {
+      font-size: .8em;
+    }
   }
   
   .sidebar {
-    padding: 0;
+    padding: 0 0 0 $sidebar-pre-left;
     font-family: "HyliaSerif", "KoreanBold";
-    font-size: 1.05em;
+    font-size: $sidebar-font-size;
+
+    color: $header-bg-color;
+    background-color: $sidebar-bg-color;
+
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-width: $sidebar-width;
+    max-width: $sidebar-width;
+
+    a { // sidebar
+      color: $body-link-blue;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        color: inherit;
+        text-underline-offset: 3px;
+        text-decoration: underline 2px;
+      }
+    }
+
+    .parent {
+      color: $header-bg-color-secondary;
+      display: block;
+      font-size: 1.14em;
+      padding: $sidebar-padding-each*.7 0 $sidebar-padding-each 0;
+    }
+
+    .hasUrl {
+      &:hover {
+        background-color: $sidebar-hover-color;
+      }
+    }
 
     .active {
-      background-color: #ddbdef;
+      background-color: $sidebar-active-color;
     }
 
     ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
-
-    }
-
-    .parent {
-      display: block;
-      font-size: 1.14em;
-      padding: $sidebar-padding-each*.7 0 $sidebar-padding-each 0;
     }
 
     li {
@@ -139,14 +234,5 @@ a {
         padding: $sidebar-padding-each $sidebar-indent*.8;
       }
     }
-
-    background-color: antiquewhite;
-    min-width: $sidebar-width;
-    max-width: $sidebar-width;
-    height: 100vh;
-    display: block;
-    top: 0;
-    left: 0;
-    position: sticky;
   }
 }
