@@ -113,6 +113,7 @@ a {
     padding: 0;
     font-family: "HyliaSerif", "KoreanBold";
     font-size: 1.05em;
+    color: black;
 
     .active {
       background-color: #ddbdef;
@@ -140,7 +141,9 @@ a {
       }
     }
 
-    background-color: antiquewhite;
+    // background-color: $header-bg-color;
+    background-image: url("../img/MainQuest_redone__copy.png");
+    background-size: cover;
     min-width: $sidebar-width;
     max-width: $sidebar-width;
     height: 100vh;
