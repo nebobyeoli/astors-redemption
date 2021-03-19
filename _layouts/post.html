@@ -45,11 +45,6 @@
             {{ content }}<br><br><br><hr>
           {% endif %}
 
-          {% if site.github.is_project_page %}
-            {% assign root_url = site.github.url %}
-          {% else %}
-            {% assign root_url = '/' %}
-          {% endif %}
           <h1>
             <a href="{{ site.baseurl }}" class="a-footing">
               <span class="big-url">{{ site.title }}</span>
