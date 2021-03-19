@@ -27,9 +27,7 @@
     <header class="page-header" role="banner" style="width: auto !important;">
       <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-      {% if page.url == '/' %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-      {% endif %}
+      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
     </header>
     
       <main id="content" class="main-content" role="main">
@@ -47,8 +45,13 @@
             {{ content }}<br><br><br><hr>
           {% endif %}
 
+          {% if site.github.is_project_page %}
+            {% assign root_url = site.github.url %}
+          {% else %}
+            {% assign root_url = '/' %}
+          {% endif %}
           <h1>
-            <a href="{{ '/' }}" class="a-footing">
+            <a href="{{ site.baseurl }}" class="a-footing">
               <span class="big-url">{{ site.title }}</span>
               <span class="small-url"> - 홈 화면으로</span>
             </a>
@@ -57,7 +60,7 @@
         
           <footer class="site-footer">
             <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-            <span class="site-footer-credits">This page was generated via <a href="https://pages.github.com">GitHub Pages</a>.</span>
+            <span class="site-footer-credits">This page was generated via <a href="{{ site.github.pages_hostname }}">GitHub Pages</a>.</span>
           </footer>
         </div>
       </main>
