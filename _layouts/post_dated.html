@@ -20,8 +20,14 @@
     <meta charset="UTF-8">
 
     {% seo %}
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <link rel="preconnect" href="{{ site.baseurl }}">
+    <link rel="preload" href="{{ site.baseurl }}{{ '/assets/fonts/NanumSquareL.otf' }}" as="font" crossorigin>
+    <link rel="preload" href="{{ site.baseurl }}{{ '/assets/fonts/HyliaSerifBeta-Regular.otf' }}" as="font" crossorigin>
+    <link rel="preload" href="{{ site.baseurl }}{{ '/assets/fonts/NanumSquareEB.otf' }}" as="font" crossorigin>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#645f8a">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -44,7 +50,7 @@
         
         <div class="mainbar">
           <h1 class="page-title">{{ page.title | default: site.title }}</h1>
-          <h3 class="page-desc">{{ page.date | date: "%Y. %m. %d." | default: site.description }}</h3>
+          <h3 class="page-desc">{{ page.date | date: "%Y. %m. %d." | default: page.description | default: site.description }}</h3>
           <h3 class="page-desc"></h3>
           <hr>
           
@@ -62,7 +68,7 @@
         
           <footer class="site-footer">
             <span class="site-footer-owner"><a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a>.</span>
-            <span class="site-footer-credits">This page was generated via <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</span>
+            <span class="site-footer-credits">This page is served via <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</span>
           </footer>
         </div>
       </main>
