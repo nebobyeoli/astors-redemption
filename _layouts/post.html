@@ -1,3 +1,8 @@
+<!-- /_layouts/post.html -->
+
+<!-- Includes custom header/footer layout of astors-redemption in the mainbar div. -->
+<!-- (acts as an actual usage in stead of _layouts/default.html) -->
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
   <head>
@@ -21,7 +26,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    <link rel="shortcut icon" type="image/png" href="./assets/img/Logo_favicon_astr.png">
+    <link rel="shortcut icon" type="image/png" href="{{ '/assets/img/Logo_favicon_astr.png' }}">
+    <!-- <link rel="shortcut icon" type="image/png" href="./assets/img/Logo_favicon_astr.png"> -->
   </head>
   <body>
     <header class="page-header" role="banner" style="width: auto !important;">
@@ -54,8 +60,8 @@
           <h4 class="page-desc foot-desc">{{ site.description }}</h4>
         
           <footer class="site-footer">
-            <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>
-            <span class="site-footer-credits">This page was generated via <a href="{{ site.github.pages_hostname }}">GitHub Pages</a>.</span>
+            <span class="site-footer-owner"><a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a>.</span>
+            <span class="site-footer-credits">This page was generated via <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</span>
           </footer>
         </div>
       </main>
