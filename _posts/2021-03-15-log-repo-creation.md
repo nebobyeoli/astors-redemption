@@ -20,7 +20,7 @@ title: Astor's Redemption
 description: Logs of a long-termed, story-changing BoTW modding project.
 ```
 
-## 로컬 실행 설정
+## 로컬 실행
 
 로컬상에서의 블로그 미리보기가 가능하도록 [`Ruby Devkit`](https://rubyinstaller.org/downloads/){:target="_blank"}을 설치해 주었다.<br>
 `Gemfile`을 추가하여 기본 작동 의존성을 가져오도록 해 주었다.

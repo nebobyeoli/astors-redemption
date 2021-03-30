@@ -2,13 +2,15 @@
 title: 왼쪽 목록판 구현
 ---
 
+## 리디렉션 목록판
+
 [Jekyll NavBar](https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de){:target="_blank"} gist를 참고하여 왼쪽 목록판을 구현하였다.
 
 `_data/navigation.yml`을 추가해 목록 항목을 표시하고, `_data/navigation.html`에서 반복문으로 각 항목에 접근하도록 해 주었다.
 
 | 참고: [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes){:target="_blank"} 테마를 사용하는 경우 추가 구현 없이도 [리디렉션 목록판](https://mmistakes.github.io/minimal-mistakes/docs/layouts/#custom-sidebar-navigation-menu){:target="_blank"}을 쓸 수 있다.
 
-<br>
+<hr style="opacity: 0;">
 
 | _data/navigation.yml
 
@@ -60,7 +62,9 @@ title: 왼쪽 목록판 구현
   {% else %}
 ```
 {% endraw %}
-<br>
+<hr style="opacity: 0;">
+
+## 삽입
 
 작성된 `_data/navigation.html` 자체를 `_layouts/default.html`에 삽입해, `<body>` 내 하나의 내용 블록과 같이 표시되도록 하였다.
 
@@ -84,7 +88,9 @@ title: 왼쪽 목록판 구현
         {{ content }}
 ```
 {% endraw %}
-<br>
+<hr style="opacity: 0;">
+
+## 정렬
 
 `.mainbar`, `.sidebar`, `.parent` 클래스와 기타 변수, 속성을 추가 정의하여 들여쓰기를 기준으로 정렬되어 표시되도록 하였다.
 
