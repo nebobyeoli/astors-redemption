@@ -106,6 +106,7 @@ a {
   h6 {
     font-weight: normal;
     color: $section-h2-color;
+    padding: .6rem 0 .3rem 0;
     
     a { // body headers
       &:hover {
@@ -148,8 +149,26 @@ a {
 
     .page-desc {
       color: $header-bg-color;
+      padding: initial;
     }
-
+    
+    ul {
+      font-size: .96em;
+      color: $code-text-color;
+    }
+    
+    td { // | using as link box
+      font-size: .84em;
+    }
+    
+    a { // mainbar
+      color: $body-link-blue;
+      text-indent: 2em;
+      code {
+        color: $body-link-blue;
+      }
+    }
+    
     .a-footing {
       text-decoration: none;
 
@@ -164,13 +183,13 @@ a {
       }
 
       .small-url {
-        font-size: .4em;
+        font-size: .42em;
         color: $header-bg-color;
       }
     }
 
     .foot-desc {
-      font-size: .8em;
+      font-size: .9em;
     }
   }
   

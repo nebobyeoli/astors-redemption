@@ -1,0 +1,77 @@
+<!-- /_layouts/post_dated.html -->
+
+<!-- Layout for "dated" posts -->
+<!-- Uses the date of the post in the description area of the mainbar -->
+<!-- (derived from _layouts/post.html -- other components remain the same) -->
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+    <meta charset="UTF-8">
+
+    {% seo %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#645f8a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+    {% if site.github.is_project_page %}
+      <link rel="shortcut icon" type="image/png" href="./assets/img/Logo_favicon_astr.png">
+    {% else %}
+      <link rel="shortcut icon" type="image/png" href="{{ '/assets/img/Logo_favicon_astr.png' }}">
+    {% endif %}
+  </head>
+  
+  <body>
+    <header class="page-header" role="banner" style="width: auto !important;">
+      <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+      <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+      <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+    </header>
+    
+      <main id="content" class="main-content" role="main">
+        <div class="sidebar">
+          {% include navigation.html %}
+        </div>
+        
+        <div class="mainbar">
+          <h1 class="page-title">{{ page.title | default: site.title }}</h1>
+          <h3 class="page-desc">{{ page.date | date: "%Y. %m. %d." | default: site.description }}</h3>
+          <h3 class="page-desc"></h3>
+          <hr>
+          
+          {% if page.content != empty %}
+            {{ content }}<br><br><br><hr>
+          {% endif %}
+
+          <h1>
+            <a href="{{ site.baseurl }}" class="a-footing">
+              <span class="big-url">{{ site.title }}</span>
+              <span class="small-url"> - 홈 화면으로</span>
+            </a>
+          </h1>
+          <h4 class="page-desc foot-desc">{{ site.description }}</h4>
+        
+          <footer class="site-footer">
+            <span class="site-footer-owner"><a href="{{ site.github.repository_url }}" target="_blank">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}" target="_blank">{{ site.github.owner_name }}</a>.</span>
+            <span class="site-footer-credits">This page was generated via <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</span>
+          </footer>
+        </div>
+      </main>
+
+    <!-- </div> -->
+
+  </body>
+</html>

@@ -16,4 +16,4 @@ defaults:
     scope:
       type: posts
     values:
-      description: Default post description
+      layout: post_dated
