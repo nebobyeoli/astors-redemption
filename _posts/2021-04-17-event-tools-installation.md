@@ -2,6 +2,8 @@
 title: 이벤트 도구 설치
 ---
 
+## NPC 문구 추가?
+
 디스코드 검색 결과 NPC의 대화 내용을 수정하는 것에서 나아가, 대화 내용을 더 추가하기 위해서는 해당 NPC의 `msbt` 뿐만 아니라 <b>EventFlow</b>의 대화 노드까지 추가 수정해야 한다는 내용이 있었다.<br>
 `/content/Event/Npc_HatenoVillage001.sbeventpack`를 열었을 때, **Wildbits** 나 **Toolbox** 는 이 안의 `EventFlow/◆◆.bfevfl`의 EventFlow 파일들을 읽고 쓰지는 못하므로 이들을 수정하기 위해서는 다른 도구들이 필요했다.
 
